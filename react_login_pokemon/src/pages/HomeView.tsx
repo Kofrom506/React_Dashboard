@@ -19,6 +19,11 @@ import type { ColumnsType } from "antd/es/table";
 import Modal from "antd/es/modal/Modal";
 import { DataType } from "../interface";
 
+// import ModalForm from "./components/ModalForm";
+// import ModalForm from "./components/ModalForm";
+import { Person } from "../model/person";
+import ModalForm from "../components/modalForm";
+
 function HomeView() {
   const [isEditClicked, setIsEditClicked] = useState(false);
   const [userID, setUserID] = useState("");
@@ -177,12 +182,12 @@ function HomeView() {
     <>
       <div>
         <h1>Dashboard Database OCBC NISP</h1>
-        <Table columns={columns} dataSource={dataSource} />
+        {/* <Table columns={columns} dataSource={dataSource} /> */}
         <div className="card">
           <Button type="primary" onClick={showModal}>
             Add Person
           </Button>
-          <modalForm />
+          {/* <ModalForm person = {data[0]} ></ModalForm> */}
         </div>
       </div>
     </>
@@ -191,3 +196,18 @@ function HomeView() {
 
 export default HomeView;
 
+var data: Person[] = [
+  new Person(10,"Evan",10,"Jalan Mangga Besar IV E","Universitas Indonesioa","Teknik Informatika"),
+  new Person(10,"Evan",10,"Jalan Mangga Besar IV E","Universitas Indonesioa","Teknik Informatika"),
+  new Person(10,"Evan",10,"Jalan Mangga Besar IV E","Universitas Indonesioa","Teknik Informatika"),
+  new Person(10,"Evan",10,"Jalan Mangga Besar IV E","Universitas Indonesioa","Teknik Informatika"),
+  new Person(10,"Evan",10,"Jalan Mangga Besar IV E","Universitas Indonesioa","Teknik Informatika"),
+  new Person(10,"Evan",10,"Jalan Mangga Besar IV E","Universitas Indonesioa","Teknik Informatika"),
+  new Person(10,"Evan",10,"Jalan Mangga Besar IV E","Universitas Indonesioa","Teknik Informatika"),
+  new Person(10,"Evan",10,"Jalan Mangga Besar IV E","Universitas Indonesioa","Teknik Informatika"),
+  new Person(10,"Evan",10,"Jalan Mangga Besar IV E","Universitas Indonesioa","Teknik Informatika"),
+  new Person(10,"Evan",10,"Jalan Mangga Besar IV E","Universitas Indonesioa","Teknik Informatika"),
+  new Person(10,"Evan",10,"Jalan Mangga Besar IV E","Universitas Indonesioa","Teknik Informatika"),
+  new Person(10,"Evan",10,"Jalan Mangga Besar IV E","Universitas Indonesioa","Teknik Informatika"),
+  new Person(10,"Evan",10,"Jalan Mangga Besar IV E","Universitas Indonesioa","Teknik Informatika"),
+ ];

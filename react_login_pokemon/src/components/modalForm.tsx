@@ -1,13 +1,14 @@
 import { useState } from "react";
-import "./App.css";
+// import "./App.css";
 
 // import Modal from "antd/es/modal/Modal";
-import { Form, Input, Modal } from "../../node_modules/antd/es/index";
+import { Form, Input, Modal } from "antd";
+import { IPersonProps,Person } from "../model/person";
 
 
-function modalForm(person: Person) {
+function ModalForm(props: IPersonProps) {
 
-  const [personState, setPersonState] = useState<Person | null>(null);
+  const [personState, setPersonState] = useState<Person | null>(props.person);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDetailClicked, setIsDetailClicked] = useState<any>(null);
 
@@ -18,7 +19,7 @@ function modalForm(person: Person) {
       open={isModalOpen}
       onOk={() => {
         setIsModalOpen(false);
-        setPersonState(person);
+        setPersonState(props.person);
         console.log(personState?.userName)
         // handleCancel()
         // saveData()
@@ -28,17 +29,17 @@ function modalForm(person: Person) {
     >
       <Form name="Form" onFinish={() => console.log("Submitted")}>
         <Form.Item label="User ID" name="id">
-          <Input onChange={(e: any) => person.userID = e.target.value} />
+          <Input onChange={(e: any) => props.person.userID = e.target.value} />
         </Form.Item>
         <Form.Item
           label="Name"
           name="name"
           rules={[{ required: false, message: "Nama Kosong" }]}
         >
-          <Input onChange={(e: any) => person.userName = e.target.value} />
+          <Input onChange={(e: any) => props.person.userName = e.target.value} />
         </Form.Item>
         <Form.Item label="Age">
-          <Input onChange={(e: any) => person.age = e.target.value} />
+          <Input onChange={(e: any) => props.person.age = e.target.value} />
         </Form.Item>
 
         <Form.Item
@@ -46,25 +47,25 @@ function modalForm(person: Person) {
           name="address"
           rules={[{ required: false, message: "Address Kosong" }]}
         >
-          <Input onChange={(e: any) => person.address = e.target.value} />
+          <Input onChange={(e: any) => props.person.address = e.target.value} />
         </Form.Item>
         <Form.Item
           label="University"
           name="university"
           rules={[{ required: false, message: "University Kosong" }]}
         >
-          <Input onChange={(e: any) => person.university = e.target.value} />
+          <Input onChange={(e: any) => props.person.university = e.target.value} />
         </Form.Item>
         <Form.Item
           label="Faculty"
           name="faculty"
           rules={[{ required: false, message: "Faculty Kosong" }]}
         >
-          <Input onChange={(e: any) => person.faculty = e.target.value} />
+          <Input onChange={(e: any) => props.person.faculty = e.target.value} />
         </Form.Item>
       </Form>
     </Modal>
 
   );
 }
-export default modalForm;
+export default ModalForm;

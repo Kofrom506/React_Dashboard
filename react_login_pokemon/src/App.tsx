@@ -11,7 +11,7 @@ import HomeView from './pages/HomeView';
 import CrudTable from './pages/CrudTable';
 
 function App() {
-  <CrudTable/>
+  <HomeView/>
   // const [pokemonList, setPokemonList] = useState(temp)
   const [data, setData] = useState<[]>();
   const [name, setList] = useState<iGetList>();
@@ -90,8 +90,6 @@ function App() {
   //   }
   // }
 }
-
-
   return (
     <>
       <div>

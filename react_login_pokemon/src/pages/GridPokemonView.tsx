@@ -11,7 +11,7 @@ import { Grid } from 'antd'
 function GridPokemonView(){
     return (
     <div>
-        
+        <h1>EBIADSNI</h1>
     </div>
     );
 }

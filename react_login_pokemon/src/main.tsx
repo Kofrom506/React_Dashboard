@@ -12,6 +12,7 @@ import App from './App';
 // import CardView from './components/CardView';
 import HomeView from './pages/HomeView';
 import CrudTable from './pages/CrudTable';
+import GridPokemonView from './pages/GridPokemonView';
 
 
 

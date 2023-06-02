@@ -1,4 +1,4 @@
-class Person {
+export class Person {
   userID: number;
   userName: string;
   key: number;
@@ -24,6 +24,11 @@ class Person {
     this.key = Math.random();
   }
   
+}
+
+
+export interface IPersonProps{
+  person: Person
 }
 
 var data: Person[] = [
