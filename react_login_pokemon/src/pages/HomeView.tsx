@@ -1,7 +1,5 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import axios from "axios";
+// import axios from "axios";
 
 import {
   Avatar,
@@ -97,7 +95,7 @@ function HomeView() {
     setKey(Math.random());
     setKey(Math.random());
 
-    setDataSource([...dataSource, newData]);
+    // setDataSource([...dataSource, newData]);
   };
   var json = JSON.stringify(data);
   localStorage.setItem("Data", json);
@@ -141,56 +139,7 @@ function HomeView() {
           <Button type="primary" onClick={showModalEdit}>
             Edit
           </Button>
-          <Modal
-            title="Edit User"
-            open={isEditClicked}
-            onOk={() => {
-              handleOkEdit();
-            }}
-            onCancel={handleCancelEdit}
-          >
-            <Form name="loginForm" onFinish={() => console.log("")}>
-              <Form.Item
-                label="User ID"
-                name="id"
-                rules={[{ required: true, message: "ID Kosong" }]}
-              >
-                <Input onChange={(e) => setUserID(e.target.value)} />
-              </Form.Item>
-              <Form.Item
-                label="Name"
-                name="name"
-                rules={[{ required: false, message: "Nama Kosong" }]}
-              >
-                <Input onChange={(e) => setUserName(e.target.value)} />
-              </Form.Item>
-              <Form.Item label="Age">
-                <Input onChange={(e) => setUserAge(e.target.value)} />
-              </Form.Item>
 
-              <Form.Item
-                label="Address"
-                name="address"
-                rules={[{ required: false, message: "Address Kosong" }]}
-              >
-                <Input onChange={(e) => setAddress(e.target.value)} />
-              </Form.Item>
-              <Form.Item
-                label="University"
-                name="university"
-                rules={[{ required: false, message: "University Kosong" }]}
-              >
-                <Input onChange={(e) => setUniversity(e.target.value)} />
-              </Form.Item>
-              <Form.Item
-                label="Faculty"
-                name="faculty"
-                rules={[{ required: false, message: "Faculty Kosong" }]}
-              >
-                <Input onChange={(e) => setFaculty(e.target.value)} />
-              </Form.Item>
-            </Form>
-          </Modal>
           <Button
             style={{ color: status ? "#EE4B2B" : "#808080" }}
             type="default"
@@ -209,14 +158,15 @@ function HomeView() {
           >
             {!!isDetailClicked && (
               <>
-                <p>id: {isDetailClicked.id}</p>
+                {/* <p>id: {isDetailClicked.id}</p>
                 <p>name: {isDetailClicked.name}</p>
                 <p>age: {isDetailClicked.age}</p>
                 <p>address: {isDetailClicked.address}</p>
                 <p>university: {isDetailClicked.university}</p>
-                <p>faculty: {isDetailClicked.faculty}</p>
+                <p>faculty: {isDetailClicked.faculty}</p> */}
               </>
-            )}
+            )
+            }
           </Modal>
         </Space>
       ),
@@ -232,6 +182,7 @@ function HomeView() {
           <Button type="primary" onClick={showModal}>
             Add Person
           </Button>
+          <modalForm />
         </div>
       </div>
     </>
